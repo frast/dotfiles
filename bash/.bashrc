@@ -114,3 +114,4 @@ fi
 export EDITOR="code --wait"
 alias cat="batcat"
 export PATH=~/.npm-global/bin:$PATH
+eval "$(starship init bash)"
