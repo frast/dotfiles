@@ -109,8 +109,4 @@ if ! shopt -oq posix; then
   fi
 fi
 export EDITOR="code --wait"
-if [ -d "$HOME/.local/bin" ] && [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
-export PATH=~/.npm-global/bin:$PATH
 eval "$(starship init bash)"
