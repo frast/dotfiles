@@ -110,6 +110,12 @@ if ! shopt -oq posix; then
 fi
 # Set up fzf key bindings and fuzzy completion
 eval "$(fzf --bash)"
+if [ -d "$HOME/.bashrc.d" ]; then
+  for rcfile in "$HOME"/.bashrc.d/*.sh; do
+    [ -r "$rcfile" ] && . "$rcfile"
+  done
+  unset rcfile
+fi
 
 export EDITOR="code --wait"
 eval "$(starship init bash)"
