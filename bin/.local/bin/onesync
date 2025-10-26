@@ -1,0 +1,47 @@
+#!/bin/bash
+#
+# sync-passwordsafe.sh
+# Bidirektionale Synchronisation von PasswordSafe-Dateien mit OneDrive
+# für Debian Stable (rclone >= 1.55 erforderlich)
+#
+
+# Abbruch bei Fehlern
+set -euo pipefail
+
+# Argumente prüfen
+if [ $# -eq 0 ]; then
+    echo "Fehler: Es wurde kein Verzeichnis angegeben."
+    echo "Verwendung: $(basename "$0") <Verzeichnis> [rclone-Optionen]"
+    exit 1
+fi
+
+# Pfade
+LOCAL_DIR="$HOME/$1"
+REMOTE_DIR="onedrive:$1"
+shift # restliche Argumente sind für rclone
+
+# Prüfen, ob rclone verfügbar ist
+if ! command -v rclone >/dev/null 2>&1; then
+    echo "Fehler: rclone ist nicht installiert."
+    echo "Bitte mit 'sudo apt install rclone' installieren."
+    exit 1
+fi
+
+# Sicherstellen, dass das lokale Verzeichnis existiert
+if [ ! -d "$LOCAL_DIR" ]; then
+    echo "Fehler: Lokales Verzeichnis '$LOCAL_DIR' existiert nicht."
+    exit 1
+fi
+
+echo "=== $(date '+%Y-%m-%d %H:%M:%S') ==="
+echo "Starte bidirektionale Synchronisation ..."
+echo "Lokaler Pfad:  $LOCAL_DIR"
+echo "Remote-Pfad:  $REMOTE_DIR"
+if [ $# -gt 0 ]; then
+  echo "Zusätzliche rclone-Parameter: $@"
+fi
+
+# Erster Lauf mit --resync erforderlich, danach ohne
+rclone bisync "$LOCAL_DIR" "$REMOTE_DIR" "$@"
+
+echo "Synchronisation abgeschlossen."
