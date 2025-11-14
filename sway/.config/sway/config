@@ -31,6 +31,7 @@ set $menu wofi --show drun
 include /etc/sway/config-vars.d/*
 
 exec mako
+exec ~/.local/bin/thinkpad-dock.sh
 
 ### Output configuration
 #
@@ -106,6 +107,12 @@ output * bg ~/.local/share/backgrounds/beautiful-night-in-the-winter-wallpaper-2
     bindsym $mod+Shift+e exec 'swaymsg exit'
 
     bindsym $mod+Shift+s exec systemctl suspend
+
+#
+# Screen layouts:
+#
+
+   bindsym $mod+Shift+d exec ~/.local/bin/thinkpad-dock.sh
 
 #
 # Moving around:
