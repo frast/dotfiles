@@ -91,7 +91,7 @@ output * bg ~/.local/share/backgrounds/beautiful-night-in-the-winter-wallpaper-2
     bindsym $mod+p exec wofi --show run       # Zum Starten beliebiger Befehle
     bindsym $mod+Tab exec ~/.local/bin/wofi-window-switcher
 
-    bindsym $mod+b exec firefox
+    bindsym $mod+b exec microsoft-edge-stable
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.

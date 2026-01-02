@@ -119,3 +119,9 @@ fi
 
 export EDITOR="code --wait"
 eval "$(starship init bash)"
+
+
+# Add npm global packages to PATH if not already present
+if [[ ":$PATH:" != *":$HOME/.npm-global/bin:"* ]]; then
+  export PATH="$HOME/.npm-global/bin:$PATH"
+fi
