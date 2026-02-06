@@ -1,0 +1,43 @@
+window {
+    background-color: rgba(20, 20, 20, 0.8);
+    border-radius: 10px;
+    border: 1px solid rgba(80, 80, 80, 0.5);
+    padding: 5px;
+}
+
+#input {
+    margin: 5px;
+    padding: 6px 10px;
+    border: none;
+    color: #eeeeee;
+    background-color: rgba(40, 40, 40, 0.9);
+}
+
+#inner-box {
+    background-color: transparent;
+}
+
+#outer-box {
+    margin: 5px;
+    background-color: transparent;
+}
+
+#scroll {
+    background-color: transparent;
+}
+
+#entry {
+    padding: 6px 10px;
+    color: #cccccc;
+}
+
+#entry:selected {
+    background-color: rgba(80, 80, 80, 0.6);
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+* {
+    font-family: "JetBrainsMonoNL NFM", "Sans", "DejaVu Sans", "Noto Sans";
+    font-size: 10pt;
+}

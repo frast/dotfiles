@@ -1,0 +1,51 @@
+# ~/.config/i3status/config
+# Optimierte Statusbar für Sway mit dunklem Theme und Unicode-Symbolen
+
+general {
+    output_format = "i3bar"
+    colors = true
+    interval = 5
+    color_good = "#a8ff60"      # grünlich
+    color_degraded = "#f0c674"  # gelblich
+    color_bad = "#cc6666"       # rötlich
+}
+
+order += "disk /"
+order += "memory"
+order += "cpu_usage"
+order += "load"
+#order += "battery 0"
+order += "tztime local"
+
+disk "/" {
+    format = " %avail"  # SSD/HDD Icon
+    threshold_type = percentage_avail
+    low_threshold = 10
+}
+
+memory {
+    format = "🧠 %used / %total"
+    threshold_degraded = "25%"
+    threshold_critical = "10%"
+}
+
+cpu_usage {
+    format = " %usage"
+    max_threshold = 90
+}
+
+load {
+    format = " %1min"
+}
+
+#battery 0 {
+#    format = "🔋 %percentage (%remaining)"
+#    format_down = "🔌 AC"
+#    last_full_capacity = true
+#    low_threshold = 15
+#    threshold_type = percentage
+#}
+
+tztime local {
+    format = " %Y-%m-%d %H:%M"
+}

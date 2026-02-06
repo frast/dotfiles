@@ -1,0 +1,10 @@
+output=HDMI-A-1
+font=JetBrainsMonoNL NFM 10
+background-color=#1e1e2e
+text-color=#cdd6f4
+border-color=#89b4fa
+border-size=2
+default-timeout=5000
+anchor=top-right
+margin=10
+padding=8
