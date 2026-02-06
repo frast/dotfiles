@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+export GTK_IM_MODULE=xim
+export XMODIFIERS=@im=none
+export XCOMPOSEFILE="$HOME/.XCompose"
+exec /usr/bin/microsoft-edge-stable --ozone-platform=x11 "$@"

@@ -1,0 +1,11 @@
+include "%L"
+
+<Multi_key> <apostrophe> <apostrophe> : "ä"
+<Multi_key> <semicolon> <semicolon> : "ö"
+<Multi_key> <bracketleft> <bracketleft> : "ü"
+
+<Multi_key> <quotedbl> <quotedbl> : "Ä"
+<Multi_key> <colon> <colon> : "Ö"
+<Multi_key> <braceleft> <braceleft> : "Ü"
+
+<Multi_key> <s> <s> : "ß"

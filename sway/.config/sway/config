@@ -75,6 +75,11 @@ output * bg ~/.local/share/backgrounds/beautiful-night-in-the-winter-wallpaper-2
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
+input * {
+    xkb_layout us
+    xkb_options compose:caps
+}
+
 ### Key bindings
 #
 # Basics:
@@ -91,7 +96,8 @@ output * bg ~/.local/share/backgrounds/beautiful-night-in-the-winter-wallpaper-2
     bindsym $mod+p exec wofi --show run       # Zum Starten beliebiger Befehle
     bindsym $mod+Tab exec ~/.local/bin/wofi-window-switcher
 
-    bindsym $mod+b exec microsoft-edge-stable
+    bindsym $mod+b exec edgec
+    bindsym $mod+v exec vsc
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -265,4 +271,4 @@ bar {
     }
 }
 
-include /etc/sway/config.d/*
+include /etc/sway/config.d/*.config
