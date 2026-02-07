@@ -113,6 +113,7 @@ input * {
     bindsym $mod+Shift+e exec 'swaymsg exit'
 
     bindsym $mod+Shift+s exec systemctl suspend
+    bindsym $mod+Shift+x exec systemctl poweroff
 
 #
 # Screen layouts:
