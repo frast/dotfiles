@@ -11,9 +11,10 @@ set $mod Mod4
 font pango:JetBrainsMonoNL NFM 10
 
 # window properties
-default_border pixel 4
-default_floating_border pixel 4
+default_border normal 4
+default_floating_border normal 4
 titlebar_padding 15 4
+for_window [all] border normal 4
 gaps inner 16
 gaps outer 4
 
