@@ -2,4 +2,12 @@
 export GTK_IM_MODULE=xim
 export XMODIFIERS=@im=none
 export XCOMPOSEFILE="$HOME/.XCompose"
-exec /usr/bin/microsoft-edge-stable --ozone-platform=x11 "$@"
+
+# Force X11 so XIM/Compose behavior follows ~/.XCompose.
+exec /usr/bin/microsoft-edge-stable \
+  --ozone-platform=x11 \
+  --disable-vulkan \
+  --use-angle=gl \
+  --enable-features=VaapiVideoDecoder \
+  --disable-features=UseChromeOSDirectVideoDecoder,Av1VideoDecoder \
+  "$@"
