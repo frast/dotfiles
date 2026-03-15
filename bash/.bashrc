@@ -117,7 +117,8 @@ if [ -d "$HOME/.bashrc.d" ]; then
   unset rcfile
 fi
 
-export EDITOR="code --wait"
+export EDITOR="vim"
+export VISUAL="vim"
 eval "$(starship init bash)"
 
 # Merge history across concurrent shells without overwriting existing prompt hooks.
