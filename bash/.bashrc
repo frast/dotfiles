@@ -16,8 +16,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=100000
+HISTFILESIZE=200000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -120,6 +120,8 @@ fi
 export EDITOR="code --wait"
 eval "$(starship init bash)"
 
+# Merge history across concurrent shells without overwriting existing prompt hooks.
+PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND; }history -a; history -n"
 
 # Add npm global packages to PATH if not already present
 if [[ ":$PATH:" != *":$HOME/.npm-global/bin:"* ]]; then

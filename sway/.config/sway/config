@@ -108,7 +108,7 @@ input * {
     floating_modifier $mod normal
 
     # Reload the configuration file
-    bindsym $mod+Shift+c reload
+    bindsym $mod+Shift+c reload; exec sh -c 'sleep 1; ~/.local/bin/thinkpad-dock.sh'
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec 'swaymsg exit'
